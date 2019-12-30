@@ -1,0 +1,16 @@
+  
+
+<head>
+   
+	<title>Flask app</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+
+<form class="form-wrapper cf" action = "/result/"  method = "POST">
+  	<input type="text"  name = "ip" placeholder="Search here..." required>
+	  <button type="submit">Search</button>
+</form>
+
+<div class="byline"><p> {{ hostname }}</p></div>
