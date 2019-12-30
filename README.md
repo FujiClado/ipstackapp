@@ -56,7 +56,7 @@ docker run \
 -e REDIS_HOST=redis \
 -e REDIS_CACHE=300 \
 -e FLASK_PORT=8080 \
--e IPSTACK_KEY='0454ac34a0a6697c55af364b39dd60f5' \
-fujiclado/ipstackapp:1
+-e IPSTACK_KEY='0454ac34a0a6697c43af345b393360f5' \
+fujikomalan/ipstackapp:1
 
 ```
