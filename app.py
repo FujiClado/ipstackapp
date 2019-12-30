@@ -54,7 +54,7 @@ def show_result():
 
 					total_time = end_time - start_time
 
-					return render_template('result.html',cache_status=True,time_taken='{:.2f}'.format(total_time),ip=ip,country=country)
+					return render_template('result.html',cache_status=True,time_taken='{:.2f}'.format(total_time),ttl_time=ttl,ip=ip,country=country)
 				
 				else:
 					start_time = time.time()
@@ -66,7 +66,7 @@ def show_result():
 					end_time = time.time()
 
 					total_time = end_time - start_time
-					return render_template('result.html',cache_status=False,time_taken='{:.2f}'.format(total_time),ip=ip,country=country)
+					return render_template('result.html',cache_status=False,time_taken='{:.2f}'.format(total_time),ttl_time=REDIS_CACHE,ip=ip,country=country)
 
 			except:
 				return render_template('error.html',reason=' Ipstack is not reachable')	
