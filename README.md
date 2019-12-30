@@ -20,3 +20,43 @@
 
 - IPSTACK_KEY
   - ipstack api token.
+
+
+ 
+
+## Example
+
+#### Creating bridge network.
+```
+
+docker network create --driver bridge appnet
+```
+
+
+#### Creating redis container.
+
+```
+docker run \
+-d \
+--name redis \
+--network appnet \
+--restart always \
+redis:latest
+```
+
+#### Creating ipstackapp container.
+
+```
+docker run \
+-d \
+--name ipstackapp \
+--network appnet \
+--restart always \
+-p 80:8080 \
+-e REDIS_HOST=redis \
+-e REDIS_CACHE=300 \
+-e FLASK_PORT=8080 \
+-e IPSTACK_KEY='0454ac34a0a6697c55af364b39dd60f5' \
+fujiclado/ipstackapp:1
+
+```
